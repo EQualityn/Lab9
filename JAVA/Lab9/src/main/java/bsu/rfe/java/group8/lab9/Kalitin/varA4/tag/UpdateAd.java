@@ -1,15 +1,16 @@
 package bsu.rfe.java.group8.lab9.Kalitin.varA4.tag;
 
+import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.Ad;
 import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.AdList;
 import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.AdListHelper;
 import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.User;
-import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.Ad;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.util.Calendar;
+import javax.servlet.jsp.tagext.SimpleTagSupport;
+
 
 public class UpdateAd extends SimpleTagSupport {
 
