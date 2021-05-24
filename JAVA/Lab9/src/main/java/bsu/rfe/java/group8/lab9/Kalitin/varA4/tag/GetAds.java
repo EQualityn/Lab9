@@ -9,9 +9,10 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
+
+import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.User;
 import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.Ad;
 import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.AdList;
-import bsu.rfe.java.group8.lab9.Kalitin.varA4.entity.User;
 
 public class GetAds extends SimpleTagSupport {
 
@@ -24,18 +25,19 @@ public class GetAds extends SimpleTagSupport {
     public void setId(int id) {
         this.id = id;
     }
-
-    public void setRange(String range) {
-        this.range = range.toLowerCase();
-    }
-
-    public void setSort(String sort) {
+    
+  public void setSort(String sort) {
         this.sort = sort.toLowerCase();
     }
 
     public void setDir(char dir) {
         this.dir = Character.toLowerCase(dir);
     }
+    
+    public void setRange(String range) {
+        this.range = range.toLowerCase();
+    }
+
 
     public void setVar(String var) {
         this.var = var;
@@ -92,11 +94,13 @@ public class GetAds extends SimpleTagSupport {
                 }
             };
 
-            if (sortedList.size()==0) {
-                sortedList = null;
-
-            } else {
+            if (sortedList.size()!=0) {
                 Collections.sort(sortedList, comparator);
+                
+            }
+            else 
+                    {
+                sortedList = null;
             }
 
             getJspContext().setAttribute(GetAds.this.var, sortedList, PageContext.PAGE_SCOPE);
