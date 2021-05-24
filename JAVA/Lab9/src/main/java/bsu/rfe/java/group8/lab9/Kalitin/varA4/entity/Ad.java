@@ -13,9 +13,10 @@ public class Ad implements Serializable, Identifiable {
     private String subject = "";
     private String body = "";
     private int authorId;
-    transient private User author;
     private Long lastModified;
     transient private Date lastModifiedDate;
+    transient private User author;
+    
 
     public Ad(){
         lastModified = Calendar.getInstance().getTimeInMillis();
@@ -32,15 +33,16 @@ public class Ad implements Serializable, Identifiable {
     public String getSubject() {
         return subject;
     }
-
+    
+    public String getBody() {
+        return body;
+    }
+    
     public void setSubject(String subject) {
         this.subject = subject;
     }
 
-    public String getBody() {
-        return body;
-    }
-
+    
     public void setBody(String body) {
         this.body = body;
     }
